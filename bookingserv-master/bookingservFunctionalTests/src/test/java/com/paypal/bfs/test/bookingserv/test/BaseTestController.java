@@ -1,24 +1,24 @@
 package com.paypal.bfs.test.bookingserv.test;
 
-import org.junit.After;
-import org.junit.Before;
-import org.springframework.beans.factory.annotation.Autowired;
+
+
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
+@ExtendWith(SpringExtension.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest
+
 public class BaseTestController {
-	
-	protected MockMvc mockMvc;
-	
-	protected MediaType contentType;
-	
-	@Autowired
-	protected  WebApplicationContext wac;
+	protected MediaType contentType = MediaType.APPLICATION_JSON;
 	
 	protected Object getClassName() {
 		return getClass();
@@ -26,18 +26,7 @@ public class BaseTestController {
 	
 	protected Gson gson;
 	
-	@Before
-	
-	public void setup() {
-		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
-		this.contentType = MediaType.APPLICATION_JSON;
-		System.err.println("in before "+getClassName());
-	}
-	
-	@After	
-	public void after() {
-		System.err.println("in after "+getClassName());
-	}
+
 	
 	protected String serilizeToJSON(Object obj) {
 		ObjectMapper mapper = new ObjectMapper();

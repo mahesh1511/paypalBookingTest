@@ -21,7 +21,7 @@ import com.paypal.bfs.test.bookingserv.service.BookingService;
 public class BookingResourceImpl implements BookingResource {
 	@Autowired
 	BookingService service;
-
+	SimpleDateFormat mDate = new SimpleDateFormat("yyyy-mm-dd");
 	@Override
 	public ResponseEntity<Booking> create(Booking booking) throws Exception  {
 		BookingEntity entity = new BookingEntity();
@@ -29,7 +29,7 @@ public class BookingResourceImpl implements BookingResource {
 			
 			entity.setFirstName(booking.getFirstName());
 			entity.setLastName(booking.getLastName());
-			SimpleDateFormat mDate = new SimpleDateFormat("yyyy-MM-dd");
+			
 			entity.setDoB(mDate.parse(booking.getDateOfBirth()));
 			entity.setCheckIn(mDate.parse(booking.getCheckIn()));
 			entity.setCheckOUT(mDate.parse(booking.getCheckOut()));
