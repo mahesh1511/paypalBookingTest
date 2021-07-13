@@ -1,5 +1,9 @@
 package com.paypal.bfs.test.bookingserv.entity;
 
+/**
+ * @author Mahesh Mishra
+ * This is Entity class for Booking data
+ */
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -12,7 +16,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table (name="RES_BOOKING")
+@Table (name="BOOKING")
 public class BookingEntity {
 	
 	@Id

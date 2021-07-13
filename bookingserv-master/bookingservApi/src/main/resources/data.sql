@@ -1,9 +1,9 @@
 INSERT INTO 
-	RES_BOOKING (first_name, last_name, date_birth,check_in,check_out ,
+	BOOKING (first_name, last_name, date_birth,check_in,check_out ,
 	total_price ,deposit_amount,address_line1,address_line2,city,
 	state,country,zip_code) 
 VALUES
-  	('Mahesh', 'Mishra', '1983-01-15','2021-07-10','2021-07-15','2000$','1500$',
-  	 'Flat J 540 , Gaur Sportswood','Sector 79','Noida','UP','India','201301'),
-  	('Shlok', 'Mishra', '2012-12-27','2021-07-10','2021-07-15','200$','150$',
-  	 'Flat J 540 , Gaur Sportswood','Sector 79','Noida','UP','India','201301');
+  	('Allen', 'Border', '1983-01-15','2021-07-23','2021-07-29','2000$','1500$',
+  	 'Flat K 654 , Pricley Land Area','Pocket 6','Ahaura','South Newland','New zealand','7845'),
+  	('Sachin', 'Techdulkar', '1979-04-24','2021-09-10','2021-11-05','200$','150$',
+  	 'Flat J 540 , Vile Parley','Sector 79','Mumbai','Maharashtra ','India','400132');

@@ -44,13 +44,13 @@
 			"description": "Total price",
 			"type": "string",
 			"minLength": 1,
-			"maxLength": 255
+			"maxLength": 10
 		},
 		"deposit_amount": {
 			"description": "Deposit amount",
 			"type": "string",
 			"minLength": 1,
-			"maxLength": 255
+			"maxLength": 10
 		},
 		"address": {
 			"type": "object",
@@ -71,25 +71,25 @@
 					"description": "City Name",
 					"type": "string",
 					"minLength": 1,
-					"maxLength": 255
+					"maxLength": 50
 				},
 				"state": {
 					"description": "State name",
 					"type": "string",
 					"minLength": 1,
-					"maxLength": 255
+					"maxLength": 50
 				},
 				"country": {
 					"description": "Country name",
 					"type": "string",
 					"minLength": 1,
-					"maxLength": 255
+					"maxLength": 50
 				},
 				"zip_code": {
 					"description": "Zip code",
 					"type": "string",
 					"minLength": 1,
-					"maxLength": 255
+					"maxLength": 10
 				}
 			},
 			"required": [
@@ -106,6 +106,8 @@
 		"last_name",
 		"date_of_birth",
 		"check_in",
-		"last_name"
+		"check_out",
+		"total_price",
+		"deposit_amount"
 	]
 }

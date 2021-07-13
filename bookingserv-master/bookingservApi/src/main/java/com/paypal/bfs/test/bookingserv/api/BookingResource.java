@@ -27,9 +27,6 @@ public interface BookingResource {
      * @throws BookingNotFoundException 
      */
     @RequestMapping(value ="/v1/bfs/booking" , method = {RequestMethod.POST})
-    @ApiOperation (value = "Add the new Booking" , consumes = "application/json" , produces = "application/json")
-    @ApiResponses(value = { @ApiResponse (code =200 , message = "Successfully created Booking"),
-    		@ApiResponse (code =400 , message = "Your request param contains invalid items")})
     ResponseEntity<Booking> create(@RequestBody @Valid Booking booking) throws Exception  ;
 
  

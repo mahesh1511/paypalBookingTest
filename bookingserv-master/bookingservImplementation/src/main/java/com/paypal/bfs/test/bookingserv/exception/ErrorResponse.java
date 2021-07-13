@@ -4,6 +4,12 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * 
+ * @author Mahesh Mishra
+ * Error Response class
+ *
+ */
 @XmlRootElement(name = "error")
 public class ErrorResponse 
 {
