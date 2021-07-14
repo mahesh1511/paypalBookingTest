@@ -10,6 +10,8 @@
   5. Check-out Date
   
 - Sample POST Request Body 
+
+
   {       
         "first_name": "Jack",
         "last_name": "Denial",
@@ -32,15 +34,15 @@
 
 ## Mahesh Comments
 - Major Error Messages describtion  
-a. Case 1 :
+#a. Case 1 :
    If Check-out date is early than Check-in date then
    Error Messege : "Check out date can not be before than check-in date so please check again and try again for booking"
    
-b. Case 2: 
+#b. Case 2: 
    If Duplicate Booking is already there then 
    Error Message : "This record is already exist , please try with different booking"
 
-c. Case 3: 
+#c. Case 3: 
    If date format is not correct in request body then 
    Error Message : "Please check the Date format and try again with booking"   
    
