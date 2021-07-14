@@ -32,19 +32,22 @@
 	
 - Please note Date format is yyyy-MM-dd example 2021-07-14 is 14 July 2021
 
-## Mahesh Comments
-- Major Error Messages describtion  
+## Details Information about Error messesges 
+
+- Major Error Messages describtion
+  
 #a. Case 1 :
-   If Check-out date is early than Check-in date then
-   Error Messege : "Check out date can not be before than check-in date so please check again and try again for booking"
+   
+   - If Check-out date is early than Check-in date then
+   - Error Messege : "Check out date can not be before than check-in date so please check again and try again for booking"
    
 #b. Case 2: 
-   If Duplicate Booking is already there then 
-   Error Message : "This record is already exist , please try with different booking"
+   - If Duplicate Booking is already there then 
+   - Error Message : "This record is already exist , please try with different booking"
 
 #c. Case 3: 
-   If date format is not correct in request body then 
-   Error Message : "Please check the Date format and try again with booking"   
+   - If date format is not correct in request body then 
+   - Error Message : "Please check the Date format and try again with booking"   
    
 ## Any Query 
 Please do contact me if any more information needed mahesh.1511@gmail.com
