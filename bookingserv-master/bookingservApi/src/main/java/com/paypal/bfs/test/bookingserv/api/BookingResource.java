@@ -44,7 +44,7 @@ public interface BookingResource {
     
     /**
      * 
-     * @return List of booking 
+     * @return Find Booking by ID 
      */
     @GetMapping("/{id}")
   	ResponseEntity<Booking> getBookingbyID(@PathVariable("id") Long id);
