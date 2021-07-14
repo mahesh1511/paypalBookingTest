@@ -47,7 +47,11 @@
 
 #c. Case 3: 
    - If date format is not correct in request body then 
-   - Error Message : "Please check the Date format and try again with booking"   
+   - Error Message : "Please check the Date format and try again with booking" 
+
+#d . Case 4 : [ Additional added for Find Booking by ID]   
+   - If booking ID is not found then 
+   - Error Message : "Booking is not found, please try with differnt Booking ID" 
    
 ## Any Query 
 Please do contact me if any more information needed mahesh.1511@gmail.com

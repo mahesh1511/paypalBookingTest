@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -17,6 +18,7 @@ import com.paypal.bfs.test.bookingserv.api.BookingResource;
 import com.paypal.bfs.test.bookingserv.api.model.Address;
 import com.paypal.bfs.test.bookingserv.api.model.Booking;
 import com.paypal.bfs.test.bookingserv.entity.BookingEntity;
+import com.paypal.bfs.test.bookingserv.exception.BookingNotFoundException;
 import com.paypal.bfs.test.bookingserv.exception.CustomExceptionHandler;
 import com.paypal.bfs.test.bookingserv.exception.DateFormatException;
 import com.paypal.bfs.test.bookingserv.exception.DuplicateRecordFoundException;
@@ -68,7 +70,7 @@ public class BookingResourceImpl implements BookingResource {
 			 *  5. Check-out Date
 			 */			
 			if(repository.dataexists(fName, lName, mDateofBirth, mCheckIn, mCheckout)>0) 
-				return custom.handleBookingFoundException(new DuplicateRecordFoundException("This record is already exist , please try with different booking"), null);
+				return custom.handleDuplicateBookingException(new DuplicateRecordFoundException("This record is already exist , please try with different booking"), null);
 			
 			
 			entity.setFirstName(fName);
@@ -128,6 +130,19 @@ public class BookingResourceImpl implements BookingResource {
 		book.setAddress(address);
 		
 		return book;
+	}
+
+	@Override
+	public ResponseEntity<Booking> getBookingbyID(Long id) {
+		Optional<BookingEntity> entity = repository.findById(id);
+		if(entity.isPresent()) {
+            BookingEntity mEntity = entity.get();
+			Booking updatedbook =EntityToResponse(mEntity, new Booking());
+			return new ResponseEntity<Booking>(updatedbook, new HttpHeaders(), HttpStatus.OK);
+        } else {
+        	return custom.handleNoBookingException(new BookingNotFoundException("Booking is not found, please try with differnt Booking ID"), null);
+        }
+		
 	}
 	
 	

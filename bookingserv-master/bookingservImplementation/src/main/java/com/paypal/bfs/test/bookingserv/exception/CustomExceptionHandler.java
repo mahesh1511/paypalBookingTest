@@ -33,7 +33,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler
     }
  
     @ExceptionHandler(DuplicateRecordFoundException.class)
-    public final ResponseEntity<Booking> handleBookingFoundException(DuplicateRecordFoundException ex, WebRequest request) {
+    public final ResponseEntity<Booking> handleDuplicateBookingException(DuplicateRecordFoundException ex, WebRequest request) {
         List<String> details = new ArrayList<>();
         details.add(ex.getLocalizedMessage());
         ErrorResponse error = new ErrorResponse("Duplicate Data Error", details);
@@ -53,6 +53,14 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler
         List<String> details = new ArrayList<>();
         details.add(ex.getLocalizedMessage());
         ErrorResponse error = new ErrorResponse("Invalid Date format Error", details);
+        return new ResponseEntity(error, HttpStatus.BAD_REQUEST);
+    }
+    
+    @ExceptionHandler(BookingNotFoundException.class)
+    public final ResponseEntity<Booking> handleNoBookingException(BookingNotFoundException ex, WebRequest request) {
+        List<String> details = new ArrayList<>();
+        details.add(ex.getLocalizedMessage());
+        ErrorResponse error = new ErrorResponse("Invalid Booking ID Error", details);
         return new ResponseEntity(error, HttpStatus.BAD_REQUEST);
     }
     
